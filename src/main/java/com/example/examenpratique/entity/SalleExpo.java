@@ -18,7 +18,7 @@ public class SalleExpo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idSalleExpo")
-    private long idSalleExpo ;
+    private Long idSalleExpo ;
     @Column(name = "nbplaces")
     private int nbplaces;
     @Column(name = "dateIntegration")
@@ -27,7 +27,8 @@ public class SalleExpo {
     private Cinema cinema;
     @OneToMany(mappedBy = "salleExpo")
     private List<ProjectionFilm> projections;
-    @ManyToMany(mappedBy = "sallesExpo")
+
+    @ManyToMany(mappedBy = "sallesExpos")
     private List<ResponsableSalle> responsableSalles;
 
 }

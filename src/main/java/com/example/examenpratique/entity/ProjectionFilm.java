@@ -11,11 +11,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
 public class ProjectionFilm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
     @Column (name = "titre")
     private String titre;
     @Column (name = "catFilm")
@@ -24,6 +25,9 @@ public class ProjectionFilm {
     private LocalDate dateProj;
 
     @ManyToOne
-    @JoinColumn(name = "salle_expo_id")
     private SalleExpo salleExpo ;
+
+    @Enumerated(EnumType.STRING)
+    private CategorieFilm categorieFilm;
+
 }

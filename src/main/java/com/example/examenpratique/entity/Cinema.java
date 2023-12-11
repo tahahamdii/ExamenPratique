@@ -14,7 +14,7 @@ public class Cinema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCinema")
-    private long idCinema;
+    private Long idCinema;
     @Column(name = "libelle")
     private String libelle;
     @Column(name = "ville")
