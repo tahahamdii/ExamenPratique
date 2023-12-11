@@ -3,6 +3,8 @@ package com.example.examenpratique.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "cinema")
 @Getter
@@ -21,6 +23,8 @@ public class Cinema {
     private String ville;
     @Column(name = "telephone")
     private long telephone;
+    @OneToMany(mappedBy = "cinema")
+    private List<SalleExpo> salleExpos;
 
 
 }
